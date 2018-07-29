@@ -2,7 +2,7 @@
 
 you can use postman, curl or your favorite post method to access the routes.
 
-the /balance route requires a body payload
+the **/balance** POST route requires a body **payload**
 
 ```
 {
@@ -11,13 +11,13 @@ the /balance route requires a body payload
 }
 ```
 
-the folowing /balances route are also available
+the folowing **/balance** POST routes are also available
 
 /balance/eos
 /balance/thedao
 /balance/bancor
 
-and payload for these are
+and **payload** for these are
 
 ```
 {
@@ -25,10 +25,15 @@ and payload for these are
 }
 ```
 
+See these images for more details: 
+
+GET route for /balance displays instructions on using the route
 ![Image](./03.png?raw=true)
 
+Test post
 ![Image](./01.png?raw=true)
 
+Test post
 ![Image](./02.png?raw=true)
 
 
