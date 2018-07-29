@@ -13,9 +13,11 @@ the **/balance** POST route requires a body **payload**
 
 the folowing **/balance** POST routes are also available
 
+```
 /balance/eos
 /balance/thedao
 /balance/bancor
+```
 
 and **payload** for these are
 
