@@ -28,7 +28,7 @@ router.post("/", function(req, res, next) {
     req.contract || "0xa74476443119A942dE498590Fe1f2454d7D4aC0d";
 
   // For for balanceOf: remove the 0x
-  var tknAddress = addr.substring(2);
+  var tknAddress = address.substring(2);
 
   // Format for balanceOf: add in the contract
   var contractData = "0x70a08231000000000000000000000000" + tknAddress;
@@ -59,7 +59,7 @@ router.post("/thedao", function(req, res, next) {
   var contractAddress = "0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413";
 
   // For for balanceOf: remove the 0x
-  var tknAddress = addr.substring(2);
+  var tknAddress = address.substring(2);
 
   // Format for balanceOf: add in the contract
   var contractData = "0x70a08231000000000000000000000000" + tknAddress;
@@ -90,7 +90,7 @@ router.post("/eos", function(req, res, next) {
   var contractAddress = "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0";
 
   // For for balanceOf: remove the 0x
-  var tknAddress = addr.substring(2);
+  var tknAddress = address.substring(2);
 
   // Format for balanceOf: add in the contract
   var contractData = "0x70a08231000000000000000000000000" + tknAddress;
@@ -121,7 +121,7 @@ router.post("/bancor", function(req, res, next) {
   var contractAddress = "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C";
 
   // For for balanceOf: remove the 0x
-  var tknAddress = addr.substring(2);
+  var tknAddress = address.substring(2);
 
   // Format for balanceOf: add in the contract
   var contractData = "0x70a08231000000000000000000000000" + tknAddress;
