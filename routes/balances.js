@@ -36,7 +36,7 @@ router.post("/", function(req, res, next) {
   // Utilize web3 to call balance
   web3.eth.call(
     {
-      to: contractAddr,
+      to: contractAddress,
       data: contractData
     },
     function(err, result) {
@@ -67,7 +67,7 @@ router.post("/thedao", function(req, res, next) {
   // Utilize web3 to call balance
   web3.eth.call(
     {
-      to: contractAddr,
+      to: contractAddress,
       data: contractData
     },
     function(err, result) {
@@ -98,7 +98,7 @@ router.post("/eos", function(req, res, next) {
   // Utilize web3 to call balance
   web3.eth.call(
     {
-      to: contractAddr,
+      to: contractAddress,
       data: contractData
     },
     function(err, result) {
@@ -129,7 +129,7 @@ router.post("/bancor", function(req, res, next) {
   // Utilize web3 to call balance
   web3.eth.call(
     {
-      to: contractAddr,
+      to: contractAddress,
       data: contractData
     },
     function(err, result) {
