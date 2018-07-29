@@ -21,30 +21,30 @@ router.get("/", function(req, res, next) {
 /* GET users listing. */
 router.post("/", function(req, res, next) {
   // User address
-  var addr = req.addr || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
+  var address = req.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
 
-  // ECR20 Token Address
-  var contractAddr =
+  // Token contract address]
+  var contractAddress =
     req.contract || "0xa74476443119A942dE498590Fe1f2454d7D4aC0d";
 
-  // Get the address ready for the call, substring removes the '0x', as its not required
+  // For for balanceOf: remove the 0x
   var tknAddress = addr.substring(2);
 
-  // '0x70a08231' is the contract 'balanceOf()' ERC20 token function in hex. A zero buffer is required and then we add the previously defined address with tokens
+  // Format for balanceOf: add in the contract
   var contractData = "0x70a08231000000000000000000000000" + tknAddress;
 
-  // Now we call the token contract with the variables from above, response will be a big number string
+  // Utilize web3 to call balance
   web3.eth.call(
     {
-      to: contractAddr, // Contract address, used call the token balance of the address in question
-      data: contractData // Combination of contractData and tknAddress, required to call the balance of an address
+      to: contractAddr, 
+      data: contractData 
     },
     function(err, result) {
       if (result) {
-        var tokens = web3.utils.toBN(result).toString(); // Convert the result to a usable number string
-        res.json({ balance: web3.utils.fromWei(tokens, "ether") }); // Change the string to be in Ether not Wei, and show it in the console
+        var tokens = web3.utils.toBN(result).toString();
+        res.json({ balance: web3.utils.fromWei(tokens, "ether") });
       } else {
-        res.json({ error: err }); // Dump errors here
+        res.json({ error: err });
       }
     }
   );
