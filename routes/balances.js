@@ -21,11 +21,10 @@ router.get("/", function(req, res, next) {
 /* POST address for balance information listing. */
 router.post("/", function(req, res, next) {
   // User address
-  var address = req.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
+  var address = req.body.address || req.body.Address
 
-  // Token contract address]
-  var contractAddress =
-    req.contract || "0xa74476443119A942dE498590Fe1f2454d7D4aC0d";
+  // Token contract address
+  var contractAddress = req.body.contract || req.body.Contract
 
   // For for balanceOf: remove the 0x
   var tknAddress = address.substring(2);
@@ -53,7 +52,7 @@ router.post("/", function(req, res, next) {
 /* POST address for theDAO balance information listing. */
 router.post("/thedao", function(req, res, next) {
   // User address
-  var address = req.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
+  var address = req.body.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
 
   // Token contract address]
   var contractAddress = "0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413";
@@ -84,7 +83,7 @@ router.post("/thedao", function(req, res, next) {
 /* POST address for EOS balance information listing. */
 router.post("/eos", function(req, res, next) {
   // User address
-  var address = req.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
+  var address = req.body.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
 
   // Token contract address]
   var contractAddress = "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0";
@@ -115,7 +114,7 @@ router.post("/eos", function(req, res, next) {
 /* POST address for Bancor balance information listing. */
 router.post("/bancor", function(req, res, next) {
   // User address
-  var address = req.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
+  var address = req.body.address || "0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a";
 
   // Token contract address]
   var contractAddress = "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C";
